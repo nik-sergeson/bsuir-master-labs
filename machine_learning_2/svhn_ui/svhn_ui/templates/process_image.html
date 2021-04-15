@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body>
+<a href="/">Home</a>
+<br><br><br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th align="center" class="text-center">Operation</th>
+        <th class="text-center">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Original image</td>
+        <td align="center" class="text-center"><img style="height:200;" src="/media/uploaded_image.png"/></td>
+      </tr>
+      {% if use_autocrop %}
+      <tr>
+        <td>Bounding box</td>
+        <td align="center" class="text-center"><img style="height:200;" src="/media/processed/image_bbox.png"/></td>
+      </tr>
+      <tr>
+        <td>Image cropped</td>
+        <td align="center" class="text-center"><img style="height:200;" src="/media/processed/image_cropped.png"/></td>
+      </tr>
+      {% endif %}
+    <tr>
+      <td>Predicted labels</td>
+      <td align="center" class="text-center">{{predicted_labels}}</td>
+    </tr>
+    </tbody>
+  </table>
+</body>
